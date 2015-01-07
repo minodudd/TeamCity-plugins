@@ -51,7 +51,13 @@ public class FormattedDateParameterPropertiesProvider extends AbstractBuildParam
         LOG.debug("Timestamp format actually used: "+timestampFormat);
 
         // get the start date
-	    Date buildStartDate = (build.getStartDate() != null ? build.getStartDate() : new Date());
+	    Date buildStartDate;
+	    try{
+		    buildStartDate = build.getStartDate();
+	    } catch (Throwable ex){
+		    // if getStartDate() failed, fall back to the current time, should be close enough anyway.
+		    buildStartDate = new Date();
+	    }
 
         // format it
         String formattedTimestamp = (new SimpleDateFormat(timestampFormat)).format(buildStartDate);
