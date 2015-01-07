@@ -3,7 +3,7 @@
   <info>
     <name>FormattedDateParameter</name>
     <display-name>Formatted Date Parameter</display-name>
-    <version>1.0</version>
+    <version>1.1</version>
     <description>Provides a TeamCity configuration parameter containing the build start time timestamp, allowing the user to define the timestamp format (in standard SimpleDateFormat)</description>
     <download-url>Plugin download URL</download-url>
     <email>minodudd@gmail.com</email>
